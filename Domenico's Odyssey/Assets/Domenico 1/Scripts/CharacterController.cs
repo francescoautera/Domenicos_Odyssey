@@ -17,8 +17,8 @@ namespace Domenico1 {
 
         private void Start() {
 
-            foreach (var item in FindObjectsOfType(typeof(ButtonColorManager))) {
-                item.GetComponent<ButtonColorManager>().onColorChange += ChangeColor;
+            foreach (var item in FindObjectsOfType(typeof(ButtonData))) {
+                item.GetComponent<ButtonData>().onColorChange += ChangeColor;
             }
         }
 
