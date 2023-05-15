@@ -14,6 +14,7 @@ namespace Domenico1 {
         private float timerToInstance;
         [SerializeField] private FloorManager floorManager;
         [SerializeField] private CharacterController characterController;
+        [SerializeField] private ColorDB colorDB;
         
         
         private void Awake() {
@@ -34,7 +35,8 @@ namespace Domenico1 {
             var xOffset = Random.Range(-randomOffsetSpawn.x, randomOffsetSpawn.x);
             var yOffset = Random.Range(-randomOffsetSpawn.y, -randomOffsetSpawn.y * 2);
             Vector3 posToInstance = new Vector3(characterController.transform.position.x + xOffset,characterController.transform.position.y+yOffset);
-            Instantiate(obstacle, posToInstance, Quaternion.identity,floorManager.transform);
+            var lastObj = Instantiate(obstacle, posToInstance, Quaternion.identity,floorManager.transform);
+            lastObj.GetComponent<ObstacleController>().SetColor( colorDB.colors[Random.Range(0, colorDB.colors.Count)]);
         }
     }
 

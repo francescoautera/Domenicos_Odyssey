@@ -12,7 +12,12 @@ namespace Domenico1 {
 			StartCoroutine(WaitBeforeDestroy());
 		}
 
-        
+		public void SetColor(Color color) {
+			GetComponentInChildren<SpriteRenderer>().color = color;
+			currentColor = color;
+		}
+
+
 
 		IEnumerator WaitBeforeDestroy() {
             
