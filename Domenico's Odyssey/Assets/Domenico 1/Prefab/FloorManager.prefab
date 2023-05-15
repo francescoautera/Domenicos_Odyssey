@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstFloor: {fileID: 8672100852590074606}
+  velocity: 5
 --- !u!1001 &6198874506362936030
 PrefabInstance:
   m_ObjectHideFlags: 0

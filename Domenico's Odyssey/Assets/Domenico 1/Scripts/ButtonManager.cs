@@ -1,9 +1,9 @@
 using System;
 using Sirenix.OdinInspector;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class ButtonManager : MonoBehaviour
@@ -11,9 +11,10 @@ public class ButtonManager : MonoBehaviour
    public List<ButtonData> buttons = new List<ButtonData>();
    public ColorDB db;
    private List<int> indexColors = new List<int>();
-   [SerializeField] Vector2 timerSwap = new Vector2(3,5);
+   [FormerlySerializedAs("timerSwap")] [SerializeField] Vector2 timerEvent = new Vector2(3,5);
    private float currentTimer;
    private float currentTimerSwap;
+   [SerializeField] private GameObject feedbackChangeColor;
    
     private void Start()
     {
@@ -27,7 +28,7 @@ public class ButtonManager : MonoBehaviour
             buttons[i].Init(color,i);
             indexColors.Remove(index);
         }
-        currentTimerSwap = Random.Range(timerSwap.x, timerSwap.y);
+        currentTimerSwap = Random.Range(timerEvent.x, timerEvent.y);
 
     }
 
@@ -35,9 +36,17 @@ public class ButtonManager : MonoBehaviour
         currentTimer += Time.deltaTime;
         if (currentTimer > currentTimerSwap) {
             currentTimer = 0;
-            currentTimerSwap = Random.Range(timerSwap.x, timerSwap.y);
-            TrySwap();
+            currentTimerSwap = Random.Range(timerEvent.x, timerEvent.y);
+            var x =Random.Range(0, 2);
+            Debug.Log(x);
+            if (x == 0) {
+                TrySwap();
+                return;
+            }
+            ChangeAllColor();
+            
         }
+        
     }
 
     private void TrySwap() {
@@ -53,12 +62,18 @@ public class ButtonManager : MonoBehaviour
     [Button("ChangeAllColor")]
     public void ChangeAllColor()
     {
+        Debug.Log("enter");
+        feedbackChangeColor.SetActive(true);
+        
         for(int i=0; i < db.colors.Count; i++)
-        {
+        { 
+            
             db.colors[i] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1);
 
         }
     }
+    
+    
     [Button("Swap pos")]
     public void SwapButton(ButtonData button, ButtonData button2)
     {
@@ -80,4 +95,5 @@ public class ButtonManager : MonoBehaviour
     }
     
     
+   
 }
