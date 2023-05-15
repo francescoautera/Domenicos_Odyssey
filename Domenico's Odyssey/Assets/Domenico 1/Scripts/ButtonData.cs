@@ -3,20 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonColorManager : MonoBehaviour
+public class ButtonData : MonoBehaviour
 {
    public Action<Color> onColorChange;
    public KeyCode keycode;
+    public Color col;
 
     public void click()
     {
-        onColorChange(Color.red);
+        onColorChange(col);
     }
     private void Update()
     {
         if (Input.GetKeyDown(keycode))
         {
-            onColorChange(Color.blue);
+            onColorChange(col);
         }
     }
 

@@ -16,16 +16,16 @@ public class ParallaxMenager : MonoBehaviour
     {
         for (int i=0; i<materials.Count; i++)
         {
-           Vector2 tmp= materials[i].GetTextureOffset("_BaseMap");
+           Vector2 tmp= materials[i].GetTextureOffset("_MainTex");
             if (vertical)
             {
                 tmp += new Vector2(0, (orderWeight * i+1)*(Time.deltaTime/2*velocity) );
-                materials[i].SetTextureOffset("_BaseMap",tmp );
+                materials[i].SetTextureOffset("_MainTex", tmp );
             }
             else
             {
                 tmp +=new Vector2((orderWeight * i+1)*(Time.deltaTime/2*velocity) , 0);
-                materials[i].SetTextureOffset("_BaseMap", tmp);
+                materials[i].SetTextureOffset("_MainTex", tmp);
 
             }
         }

@@ -10,9 +10,9 @@ public class CharacterController : MonoBehaviour
     private void Start()
     {
         
-        foreach (var item in FindObjectsOfType(typeof(ButtonColorManager)))
+        foreach (var item in FindObjectsOfType(typeof(ButtonData)))
         {
-            item.GetComponent<ButtonColorManager>().onColorChange += ChangeColor;
+            item.GetComponent<ButtonData>().onColorChange += ChangeColor;
         }
     }
     private void ChangeColor(Color col)
