@@ -8,9 +8,21 @@ public class ButtonManager : MonoBehaviour
 {
    public List<ButtonData> buttons = new List<ButtonData>();
    public ColorDB db;
+   private List<int> indexColors = new List<int>();
+   
     private void Start()
     {
-        buttons = FindObjectsOfType<ButtonData>().ToList();
+        //buttons = FindObjectsOfType<ButtonData>().ToList();
+        for (int i = 0; i < db.colors.Count; i++) {
+            indexColors.Add(i);
+        }
+        for (int i = 0; i < buttons.Count; i++) {
+            var index = indexColors[Random.Range(0, indexColors.Count)];
+            var color = db.colors[index];
+            buttons[i].Init(color,i);
+            indexColors.Remove(index);
+        }
+        
     }
     [Button("ChangeAllColor")]
     public void ChangeAllColor()

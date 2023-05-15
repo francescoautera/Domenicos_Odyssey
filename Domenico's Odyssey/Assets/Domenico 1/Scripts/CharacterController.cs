@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Domenico1 {
 
-    
+
     public class CharacterController : MonoBehaviour {
         public Action OnPlayerDeath;
         public GameObject characterModel;
@@ -42,6 +42,13 @@ namespace Domenico1 {
 
             }
         }
+
+
+        public void SetPos(float xPos) {
+
+            transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
+        }
+
     }
 
 }

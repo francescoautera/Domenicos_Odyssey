@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace Domenico1 {
+
+    public class SliderController : MonoBehaviour {
+
+        private CharacterController characterController;
+        [SerializeField] private Slider slider;
+        [SerializeField] private Vector2 minMaxViewportRange;
+        private Camera cameraMain;
+        // Start is called before the first frame update
+        void Start() {
+            
+            cameraMain = Camera.main;
+            characterController = FindObjectOfType<CharacterController>();
+        }
+
+        // Update is called once per frame
+        void Update() {
+            Debug.Log(slider.value);
+            float xPos = Mathf.Clamp(slider.value,minMaxViewportRange.x,minMaxViewportRange.y);
+            Vector3 pos = cameraMain.ViewportToWorldPoint(new Vector3(xPos, characterController.transform.position.y,characterController.transform.position.z));
+            Debug.Log(pos.x);
+           
+            characterController.SetPos(pos.x);
+        }
+    }
+
+}

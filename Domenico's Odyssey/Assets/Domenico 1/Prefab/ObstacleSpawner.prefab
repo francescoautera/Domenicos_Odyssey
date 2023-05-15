@@ -44,3 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14871f624ec812145b8cc0ef7466f377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacle: {fileID: 2732585984409918327, guid: d7f4d80975443a24b83f534924d536e6,
+    type: 3}
+  randomTimerSpawn: {x: 1.5, y: 3}
+  randomXSpawnViewportCoodinate: {x: 0.25, y: 0.7}
+  randomYSpawn: {x: 10, y: 12}
+  floorManager: {fileID: 0}
+  characterController: {fileID: 0}
+  colorDB: {fileID: 11400000, guid: 91af3006363ecda428d037c785bed285, type: 2}
