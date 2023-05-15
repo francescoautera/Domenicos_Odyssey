@@ -1800,6 +1800,7 @@ MonoBehaviour:
   - {fileID: 718033359}
   - {fileID: 1547985407}
   db: {fileID: 11400000, guid: 91af3006363ecda428d037c785bed285, type: 2}
+  timerSwap: {x: 3, y: 5}
 --- !u!1 &1468211543
 GameObject:
   m_ObjectHideFlags: 0

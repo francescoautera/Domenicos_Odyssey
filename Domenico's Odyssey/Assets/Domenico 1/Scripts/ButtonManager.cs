@@ -1,14 +1,19 @@
+using System;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ButtonManager : MonoBehaviour
 {
    public List<ButtonData> buttons = new List<ButtonData>();
    public ColorDB db;
    private List<int> indexColors = new List<int>();
+   [SerializeField] Vector2 timerSwap = new Vector2(3,5);
+   private float currentTimer;
+   private float currentTimerSwap;
    
     private void Start()
     {
@@ -22,8 +27,29 @@ public class ButtonManager : MonoBehaviour
             buttons[i].Init(color,i);
             indexColors.Remove(index);
         }
-        
+        currentTimerSwap = Random.Range(timerSwap.x, timerSwap.y);
+
     }
+
+    private void Update() {
+        currentTimer += Time.deltaTime;
+        if (currentTimer > currentTimerSwap) {
+            currentTimer = 0;
+            currentTimerSwap = Random.Range(timerSwap.x, timerSwap.y);
+            TrySwap();
+        }
+    }
+
+    private void TrySwap() {
+        var tmpButtons = new List<ButtonData>();
+        tmpButtons.AddRange(buttons);
+        var b1 = tmpButtons[Random.Range(0, tmpButtons.Count)];
+        tmpButtons.Remove(b1);
+        var b2 = tmpButtons[Random.Range(0, tmpButtons.Count)];
+        tmpButtons.Remove(b2);
+        SwapButton(b1,b2);
+    }
+
     [Button("ChangeAllColor")]
     public void ChangeAllColor()
     {
@@ -52,4 +78,6 @@ public class ButtonManager : MonoBehaviour
     {
 
     }
+    
+    
 }
