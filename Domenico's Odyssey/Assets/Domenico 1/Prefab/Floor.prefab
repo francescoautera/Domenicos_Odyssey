@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorObject: {fileID: 7916892868865154194}
-  timerDestroy: 10
+  timerDestroy: 3
 --- !u!50 &2323713269796362139
 Rigidbody2D:
   serializedVersion: 4

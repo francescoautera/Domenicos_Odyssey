@@ -659,6 +659,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &967494013 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1198508052912544715, guid: 9dd63edadff4b4e438466b0434487a37,
+    type: 3}
+  m_PrefabInstance: {fileID: 3859479277901146347}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81419a40db86bc643983147c792865c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &996606611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1094,18 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!114 &1957029635 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4243992508650366919, guid: 4dbafa98fc730b44a8912d5becfedfab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1289708060}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b1e91d3aa848afb1ae1be715d0f524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1961327617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1291,6 +1315,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6157632951973611464, guid: cead83ec4be4973479b3d137e4976c42,
         type: 3}
+      propertyPath: floorManager
+      value: 
+      objectReference: {fileID: 1957029635}
+    - target: {fileID: 6157632951973611464, guid: cead83ec4be4973479b3d137e4976c42,
+        type: 3}
       propertyPath: randomTimerSpawn.x
       value: 1.5
       objectReference: {fileID: 0}
@@ -1301,8 +1330,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6157632951973611464, guid: cead83ec4be4973479b3d137e4976c42,
         type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 967494013}
+    - target: {fileID: 6157632951973611464, guid: cead83ec4be4973479b3d137e4976c42,
+        type: 3}
       propertyPath: randomOffsetSpawn.x
-      value: -3
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6157632951973611464, guid: cead83ec4be4973479b3d137e4976c42,
         type: 3}
