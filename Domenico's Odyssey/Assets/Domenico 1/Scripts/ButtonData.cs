@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonData : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class ButtonData : MonoBehaviour
         col = color;
         var value = index + 1;
         text.text = value.ToString();
+        GetComponent<Image>().color = col;
         // colors.RemoveAt(tmp);
     }
 

@@ -1,3 +1,4 @@
+using System;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,5 +7,12 @@ using UnityEngine;
 
 public class ColorDB : SerializedScriptableObject
 {
-  public List<Color> colors;
+  public List<MapColor> colors;
+  
+}
+
+[Serializable]
+public class MapColor {
+  public Color color;
+  public string nameColor;
 }

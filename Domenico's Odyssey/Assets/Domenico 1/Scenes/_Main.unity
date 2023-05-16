@@ -989,6 +989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loseText: {fileID: 456798484}
   restartButton: {fileID: 1072527938}
+  colorDB: {fileID: 11400000, guid: 91af3006363ecda428d037c785bed285, type: 2}
 --- !u!1001 &875646606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1120,6 +1121,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9212813034812511563, guid: f84a3a8691e359c49974cff2258e9efc,
         type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212813034812511563, guid: f84a3a8691e359c49974cff2258e9efc,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212813034812511563, guid: f84a3a8691e359c49974cff2258e9efc,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212813034812511563, guid: f84a3a8691e359c49974cff2258e9efc,
+        type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.41960788
       objectReference: {fileID: 0}
@@ -1147,6 +1163,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_SelectedColor.r
       value: 0.8980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212813034812511564, guid: f84a3a8691e359c49974cff2258e9efc,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.023584902
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212813034812511564, guid: f84a3a8691e359c49974cff2258e9efc,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.023584902
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212813034812511564, guid: f84a3a8691e359c49974cff2258e9efc,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f84a3a8691e359c49974cff2258e9efc, type: 3}

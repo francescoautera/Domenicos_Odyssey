@@ -33,7 +33,7 @@ public class ButtonManager : MonoBehaviour
         for (int i = 0; i < buttons.Count; i++) {
             var index = indexColors[Random.Range(0, indexColors.Count)];
             var color = db.colors[index];
-            buttons[i].Init(color,i);
+            buttons[i].Init(color.color,i);
             indexColors.Remove(index);
         }
         currentOutButton = buttons[buttons.Count - 1];
@@ -76,12 +76,18 @@ public class ButtonManager : MonoBehaviour
     {
         Debug.Log("enter");
         feedbackChangeColor.SetActive(true);
+        for (int i = 0; i < db.colors.Count; i++) {
+            indexColors.Add(i);
+        }
         
-        for(int i=0; i < db.colors.Count; i++)
+        for(int i=0; i < buttons.Count; i++)
         { 
-            
-            db.colors[i] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1);
-
+            var index = indexColors[Random.Range(0, indexColors.Count)];
+            var color = db.colors[index];
+            buttons[i].Init(color.color,i);
+            indexColors.Remove(index);
+            //
+            // db.colors[i] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1);
         }
     }
 

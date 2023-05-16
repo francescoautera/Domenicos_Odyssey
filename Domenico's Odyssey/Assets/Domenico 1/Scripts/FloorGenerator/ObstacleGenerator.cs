@@ -52,8 +52,8 @@ namespace Domenico1 {
             var x = Random.Range(0, 2);
             var sprite = obstacleDbSprites.GetSprite();
             var sprite2 = obstacleDbSprites.GetSprite();
-            lastObj.GetComponent<ObstacleController>().SetColorAndSprite(x==0?color: secondColor,sprite);
-            secondObj.GetComponent<ObstacleController>().SetColorAndSprite(x==1?color: secondColor,sprite2);
+            lastObj.GetComponent<ObstacleController>().SetColorAndSprite(x==0?color.color: secondColor,sprite);
+            secondObj.GetComponent<ObstacleController>().SetColorAndSprite(x==1?color.color: secondColor,sprite2);
             
         }
     }
