@@ -506,7 +506,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1006,7 +1006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1961327620, guid: f84a3a8691e359c49974cff2258e9efc, type: 3}
       propertyPath: keycode
-      value: 49
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 9212813034812511561, guid: f84a3a8691e359c49974cff2258e9efc,
         type: 3}
@@ -1559,6 +1559,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4243992508650366919, guid: 4dbafa98fc730b44a8912d5becfedfab,
+        type: 3}
+      propertyPath: velocity
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4312380928903808590, guid: 4dbafa98fc730b44a8912d5becfedfab,
         type: 3}
       propertyPath: m_Enabled
@@ -1793,7 +1798,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453528767}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2440,7 +2445,7 @@ PrefabInstance:
     - target: {fileID: 2352840483471314027, guid: bc1c75760a78f21449f1f93e2a91ed3f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc1c75760a78f21449f1f93e2a91ed3f, type: 3}

@@ -13,6 +13,7 @@ public class ButtonData : MonoBehaviour
    static List<Color> colors=new List<Color>();
    private TMP_Text text;
     public bool isIn;
+    public bool isOutOFRange;
 
     [Button("AssignColor")]
    
@@ -32,7 +33,7 @@ public class ButtonData : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(keycode))
+        if (Input.GetKeyDown(keycode) && !isOutOFRange)
         {
             onColorChange(col);
         }
