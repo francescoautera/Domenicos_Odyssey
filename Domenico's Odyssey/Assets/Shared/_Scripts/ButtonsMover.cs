@@ -35,7 +35,10 @@ namespace Domenico.Shared
 			sequence.Append(button.rectTransform.DOMove(outOfScreenExitPoint.position, .5f).SetEase(ease));
 			sequence.onComplete += () => Destroy(button.gameObject);
 		}
-
+	
+		
+		
+		//NON HO LA MINIMA IDEA DEL PERCHÈ MA NON VA NEL PUNTO GIUSTO, VA SEMPRE AL CENTRO
 		public void MakeButtonEntrance(Transform parent, GameObject placeholder, ColorButton button)
 		{
 			var sequence = DOTween.Sequence();

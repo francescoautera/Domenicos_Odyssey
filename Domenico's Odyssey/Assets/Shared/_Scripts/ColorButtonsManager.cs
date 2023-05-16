@@ -148,24 +148,23 @@ namespace Domenico.Shared
 		
 		public void SwapButtons()
 		{
-			buttons.RemoveNulls();
-
-
 			SwapButtons(0,2);
 			buttons.Swap(0,2);
 		}
 
 		public void KickOutFirstButton()
 		{
-			buttons.TrimExcess();
-
 			buttonsMover.KickOutButton(buttons[0]);
+			buttons.Remove(buttons[0]);
+		}
+		public void KickOutFirstButton(int index)
+		{
+			buttonsMover.KickOutButton(buttons[index]);
+			buttons.Remove(buttons[index]);
 		}
 
 		public void AddButtonToEnd()
 		{
-			buttons.RemoveNulls();
-
 			var placeholder = Instantiate(placeholderPrefab.gameObject, transform);
 			var newButton = Instantiate(colorButtonPrefab,buttonsMover.OutOfScreenEnterPoint.position,quaternion.identity,canvasRoot);
 			newButton.name = "entering Button";
