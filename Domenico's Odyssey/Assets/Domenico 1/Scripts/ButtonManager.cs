@@ -5,6 +5,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
+using DG.Tweening;
+using System.Collections;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -15,6 +17,11 @@ public class ButtonManager : MonoBehaviour
    private float currentTimer;
    private float currentTimerSwap;
    [SerializeField] private GameObject feedbackChangeColor;
+    public bool somethingIsSwapping=false;
+    [Header("Animation")]
+    public float yMovement;
+    public float yTime;
+    public float xTime;
    
     private void Start()
     {
@@ -33,13 +40,14 @@ public class ButtonManager : MonoBehaviour
     }
 
     private void Update() {
+     
         currentTimer += Time.deltaTime;
         if (currentTimer > currentTimerSwap) {
             currentTimer = 0;
             currentTimerSwap = Random.Range(timerEvent.x, timerEvent.y);
             var x =Random.Range(0, 2);
             Debug.Log(x);
-            if (x == 0) {
+            if (x == 0&&!somethingIsSwapping) {
                 TrySwap();
                 return;
             }
@@ -50,6 +58,7 @@ public class ButtonManager : MonoBehaviour
     }
 
     private void TrySwap() {
+        somethingIsSwapping = true;
         var tmpButtons = new List<ButtonData>();
         tmpButtons.AddRange(buttons);
         var b1 = tmpButtons[Random.Range(0, tmpButtons.Count)];
@@ -72,14 +81,63 @@ public class ButtonManager : MonoBehaviour
 
         }
     }
-    
-    
+
+    public IEnumerator Anim(ButtonData button, ButtonData button2)
+    {
+        button.gameObject.transform.DOMoveY(button.gameObject.transform.position.y + yMovement, yTime);
+        button2.gameObject.transform.DOMoveY(button2.gameObject.transform.position.y + yMovement, yTime);
+        yield return new WaitForSeconds(yTime);
+        button.gameObject.transform.DOMoveX(button2.gameObject.transform.position.x, xTime);
+        button2.gameObject.transform.DOMoveX(button.gameObject.transform.position.x, xTime);
+        yield return new WaitForSeconds(xTime);
+            
+        button.gameObject.transform.DOMoveY(button.gameObject.transform.position.y - yMovement, yTime);
+        button2.gameObject.transform.DOMoveY(button2.gameObject.transform.position.y - yMovement, yTime);
+        yield return new WaitForSeconds(0.9f);
+        somethingIsSwapping=false;
+    }
+
+    public IEnumerator AnimThrowOut(ButtonData button, ButtonData button2)
+    {
+        ButtonData inButton;
+        ButtonData outButton;
+        float y;
+        if (button.isIn) {
+        inButton= button;
+        outButton= button2;
+            y = inButton.transform.position.y;
+        }
+        else
+        {
+        inButton= button2;
+        outButton= button;
+            y = inButton.transform.position.y;
+
+        }
+        outButton.gameObject.transform.DOMoveX(inButton.gameObject.transform.position.x , xTime);
+        inButton.gameObject.transform.DOMoveY(outButton.gameObject.transform.position.y , yTime);
+        yield return new WaitForSeconds(xTime);
+        outButton.gameObject.transform.DOMoveY(y, yTime);
+        outButton.isIn = true;
+        inButton.isIn = false;
+        yield return new WaitForSeconds(0.9f);
+
+        somethingIsSwapping = false;
+
+
+    }
     [Button("Swap pos")]
+
     public void SwapButton(ButtonData button, ButtonData button2)
     {
-        Vector3 tmp = button.gameObject.transform.position;
-        button.gameObject.transform.position = button2.gameObject.transform.position;
-        button2.gameObject.transform.position = tmp;  
+        if (button.isIn && button2.isIn)
+        {
+            StartCoroutine(Anim(button, button2));
+        }
+        else
+        {
+            StartCoroutine (AnimThrowOut(button, button2));
+        }
     }
     [Button("swap colore")]
     public void SwapColor(ButtonData button, ButtonData button2)
@@ -89,10 +147,7 @@ public class ButtonManager : MonoBehaviour
         button2.col=tmp;
     }
 
-    public void ThrowOut()
-    {
 
-    }
     
     
    
