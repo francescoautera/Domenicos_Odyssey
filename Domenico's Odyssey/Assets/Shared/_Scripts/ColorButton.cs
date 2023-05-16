@@ -16,11 +16,18 @@ namespace Domenico.Shared
         [SerializeField] private TextMeshProUGUI buttonText;
         [SerializeField] private Button button;
         public RectTransform rectTransform;
-
         
-
         public Action<ScriptableColor> onButtonClicked;
 
+        private void OnEnable()
+        {
+            ColorButtonsManager.OnButtonsColorChanged += UpdateColor;
+        }
+
+        private void OnDisable()
+        {
+            ColorButtonsManager.OnButtonsColorChanged += UpdateColor;
+        }
 
         public void SetButton(ScriptableColor scriptableColor, KeyCode keyCode, ScriptableColor fakeColor)
         {
@@ -31,8 +38,13 @@ namespace Domenico.Shared
             button.onClick.RemoveAllListeners();
             button.onClick.AddListener(()=>ButtonClicked(scriptableColor));
             buttonText.text = keyCode.ToString().Replace("Alpha","");
+            gameObject.name = $"Button-{keyCode.ToString().Replace("Alpha", "")}-{fakeColor.ColorName}";
         }
-        
+
+        public void UpdateColor(ScriptableColor fakeColor)
+        {
+            buttonImage.color = fakeColor.Color;
+        }
         public void SetButton(ScriptableColor fakeColor)
         {
             currentButtonKey = KeyCode.None;

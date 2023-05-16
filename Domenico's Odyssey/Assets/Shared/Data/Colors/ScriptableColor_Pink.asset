@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63fd033f05fb448b8b437e383936f3de, type: 3}
-  m_Name: ScriptableKeys_Easy
+  m_Script: {fileID: 11500000, guid: 798edb2616e065d4fbb6cd8b0ad84e87, type: 3}
+  m_Name: ScriptableColor_Pink
   m_EditorClassIdentifier: 
-  keys: 31000000320000003300000034000000350000003600000037000000380000003900000030000000
+  color: {r: 1, g: 0.3433962, b: 0.8063826, a: 1}
+  colorName: Pink
