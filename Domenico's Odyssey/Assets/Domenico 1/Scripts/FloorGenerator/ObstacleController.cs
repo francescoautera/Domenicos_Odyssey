@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -10,17 +9,17 @@ namespace Domenico1 {
 		public float timerDestroy;
 		public Color currentColor;
 		private Camera mainCamera;
-		private float xPos,negativexPos;
-		public float timerDirection;
-		public float verticalSpeed;
-
+		private ColorManagment colorManagment;
+		[SerializeField] private TriggerColor triggerColor;
+		
 		private void Awake() {
 			StartCoroutine(WaitBeforeDestroy());
 			mainCamera = Camera.main;
-		 	xPos = mainCamera.ViewportToWorldPoint(new Vector3(1,0,0)).x;
-		    negativexPos = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x;
-			
+			colorManagment = FindObjectOfType<ColorManagment>();
+			triggerColor.OnPlayerInside += TrySetColor;
 		}
+
+		private void TrySetColor() => colorManagment.SetColor();
 
 		public void SetColorAndSprite(Color color,Sprite s) {
 			GetComponentInChildren<SpriteRenderer>().color = color;
@@ -29,7 +28,8 @@ namespace Domenico1 {
 			
 		}
 
-		
+
+		public void StartAnim() { }
 
 
 		IEnumerator WaitBeforeDestroy() {
