@@ -12,14 +12,10 @@ public class ButtonData : MonoBehaviour
    public ColorDB colorDB;
    static List<Color> colors=new List<Color>();
    private TMP_Text text;
+    public bool isIn;
 
     [Button("AssignColor")]
-    private void Start()
-    {
-        
-      
-    }
-
+   
     public void Init(Color color,int index) {
         // colors.AddRange(colorDB.colors);
         // int tmp = UnityEngine.Random.Range(0, colors.Count);
