@@ -2441,7 +2441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1938950760}
   m_Layer: 5
-  m_Name: ContainerText
+  m_Name: ContainerTextColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
