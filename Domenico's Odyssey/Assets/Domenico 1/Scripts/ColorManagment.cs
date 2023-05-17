@@ -34,7 +34,7 @@ public class ColorManagment : MonoBehaviour {
 		primaryString = colorDB.GetString(primaryColor);
 		textColor = buttonManager.CurrentButtonsInUi[index2].col;
 		colorText.enabled = true;
-        colorText.text = $"Tappa il colore <color=#{ColorUtility.ToHtmlStringRGBA(textColor)}>{primaryString}</color>";
+        colorText.text = $"Cambia nel colore <color=#{ColorUtility.ToHtmlStringRGBA(textColor)}>{primaryString}</color>";
 
     }
 

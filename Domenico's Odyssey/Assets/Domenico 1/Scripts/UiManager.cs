@@ -10,16 +10,20 @@ namespace Domenico1 {
 
 		public TextMeshProUGUI  loseText;
 		public Button restartButton;
+		public Button menuButton;
 		[SerializeField] ColorDB colorDB;
 		[SerializeField] private GameObject losePanel;
 		[SerializeField] private Image bgImage;
 		[SerializeField] private TMP_Text point;
 		private CharacterController characterController;
+		[SerializeField] private Image fade;
 		
 		
 		private void Awake() {
+			fade.CrossFadeAlpha(0,1,false);
 			loseText.enabled = false;
 			restartButton.onClick.AddListener(Restart);
+			menuButton.onClick.AddListener(BackToMenu);
 			restartButton.gameObject.SetActive(false);
 
 		}
@@ -47,7 +51,19 @@ namespace Domenico1 {
 
 
 		private void Restart() {
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+			
+			fade.CrossFadeAlpha(1,1,false);
+			StartCoroutine(WaitBeforeChangeScene("_Main"));
+		}
+
+		private void BackToMenu() {
+			fade.CrossFadeAlpha(1,1,false);
+			StartCoroutine(WaitBeforeChangeScene("_Menu"));
+		}
+
+		IEnumerator WaitBeforeChangeScene(string nameScene) {
+			yield return new WaitForSeconds(1.1f);
+			SceneManager.LoadScene(nameScene);
 		}
 
 

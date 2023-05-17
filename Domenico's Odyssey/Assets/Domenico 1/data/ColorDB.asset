@@ -32,7 +32,7 @@ MonoBehaviour:
     nameColor: azzurro
   - color: {r: 0.70803916, g: 0.12335351, b: 0.7924528, a: 1}
     nameColor: viola
-  - color: {r: 0.07806135, g: 0.07355818, b: 0.8207547, a: 1}
+  - color: {r: 0.096787095, g: 0.36828858, b: 0.8207547, a: 1}
     nameColor: blu
   - color: {r: 1, g: 0.47107324, b: 0.0990566, a: 1}
     nameColor: arancione

@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Domenico 1/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Domenico 1/Scenes/_Menu.unity
+    guid: ab6f239d114015743a722f2ac6d4b233
+  - enabled: 1
+    path: Assets/Domenico 1/Scenes/_Main.unity
+    guid: 2392f85bb63d2d843a3d73d86aa065a7
   m_configObjects: {}

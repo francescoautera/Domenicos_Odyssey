@@ -11,11 +11,13 @@ namespace Domenico1 {
 		private Camera mainCamera;
 		private ColorManagment colorManagment;
 		[SerializeField] private TriggerColor triggerColor;
+		private Animator animator;
 		
 		private void Awake() {
 			StartCoroutine(WaitBeforeDestroy());
 			mainCamera = Camera.main;
 			colorManagment = FindObjectOfType<ColorManagment>();
+			animator = GetComponent<Animator>();
 			triggerColor.OnPlayerInside += TrySetColor;
 		}
 
@@ -29,7 +31,9 @@ namespace Domenico1 {
 		}
 
 
-		public void StartAnim() { }
+		public void StartAnim() {
+			animator.SetTrigger("Move");
+		}
 
 
 		IEnumerator WaitBeforeDestroy() {
