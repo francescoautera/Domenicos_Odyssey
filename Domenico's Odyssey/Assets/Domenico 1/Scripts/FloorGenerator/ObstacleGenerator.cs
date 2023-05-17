@@ -39,21 +39,14 @@ namespace Domenico1 {
         private void Spawn() {
             
             var yOffset = Random.Range(randomYSpawn.x, randomYSpawn.y);
-            var firstxPosViewport = Random.Range(randomXSpawnViewportCoodinate.x,0.4f);
-            var secondxPosViewPort = Random.Range(0.5f, randomXSpawnViewportCoodinate.y);
+            var firstxPosViewport = 0.5f;
             var xOffset = mainCamera.ViewportToWorldPoint(new Vector3(firstxPosViewport, 0, 0));
-            var secondXOffset = mainCamera.ViewportToWorldPoint(new Vector3(secondxPosViewPort, 0, 0));
             Vector3 posToInstance = new Vector3(xOffset.x,characterController.transform.position.y-yOffset);
-            Vector3 secondposToInstance = new Vector3( secondXOffset.x, characterController.transform.position.y - yOffset);
             var lastObj = Instantiate(obstacle, posToInstance, Quaternion.identity,floorManager.transform);
-            var secondObj = Instantiate(obstacle, secondposToInstance, Quaternion.identity,floorManager.transform);
-            var color = colorDB.colors[Random.Range(0, colorDB.colors.Count)];
-            var secondColor = buttonManager.buttons[Random.Range(0, buttonManager.buttons.Count)].col;
-            var x = Random.Range(0, 2);
+            //var color = colorDB.colors[Random.Range(0, colorDB.colors.Count)];
             var sprite = obstacleDbSprites.GetSprite();
-            var sprite2 = obstacleDbSprites.GetSprite();
-            lastObj.GetComponent<ObstacleController>().SetColorAndSprite(x==0?color: secondColor,sprite);
-            secondObj.GetComponent<ObstacleController>().SetColorAndSprite(x==1?color: secondColor,sprite2);
+            lastObj.GetComponent<ObstacleController>().SetColorAndSprite(Color.white, sprite);
+            
             
         }
     }

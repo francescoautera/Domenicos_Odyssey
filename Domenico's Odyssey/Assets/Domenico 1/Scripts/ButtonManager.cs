@@ -18,6 +18,7 @@ public class ButtonManager : MonoBehaviour
    private float currentTimerSwap;
    [SerializeField] private GameObject feedbackChangeColor;
     public bool somethingIsSwapping=false;
+    private ButtonData currentOutButton;
     [Header("Animation")]
     public float yMovement;
     public float yTime;
@@ -32,9 +33,11 @@ public class ButtonManager : MonoBehaviour
         for (int i = 0; i < buttons.Count; i++) {
             var index = indexColors[Random.Range(0, indexColors.Count)];
             var color = db.colors[index];
-            buttons[i].Init(color,i);
+            buttons[i].Init(color.color,i);
             indexColors.Remove(index);
         }
+        currentOutButton = buttons[buttons.Count - 1];
+        currentOutButton.isOutOFRange = true;
         currentTimerSwap = Random.Range(timerEvent.x, timerEvent.y);
 
     }
@@ -73,12 +76,18 @@ public class ButtonManager : MonoBehaviour
     {
         Debug.Log("enter");
         feedbackChangeColor.SetActive(true);
+        for (int i = 0; i < db.colors.Count; i++) {
+            indexColors.Add(i);
+        }
         
-        for(int i=0; i < db.colors.Count; i++)
+        for(int i=0; i < buttons.Count; i++)
         { 
-            
-            db.colors[i] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1);
-
+            var index = indexColors[Random.Range(0, indexColors.Count)];
+            var color = db.colors[index];
+            buttons[i].Init(color.color,i);
+            indexColors.Remove(index);
+            //
+            // db.colors[i] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1);
         }
     }
 
@@ -106,12 +115,18 @@ public class ButtonManager : MonoBehaviour
         inButton= button;
         outButton= button2;
             y = inButton.transform.position.y;
+            currentOutButton = button;
+            currentOutButton.isOutOFRange = true;
+            button2.isOutOFRange = false;
         }
         else
         {
         inButton= button2;
         outButton= button;
             y = inButton.transform.position.y;
+            currentOutButton = button2;
+            currentOutButton.isOutOFRange = true;
+            button.isOutOFRange = false;
 
         }
         outButton.gameObject.transform.DOMoveX(inButton.gameObject.transform.position.x , xTime);
@@ -121,7 +136,6 @@ public class ButtonManager : MonoBehaviour
         outButton.isIn = true;
         inButton.isIn = false;
         yield return new WaitForSeconds(0.9f);
-
         somethingIsSwapping = false;
 
 

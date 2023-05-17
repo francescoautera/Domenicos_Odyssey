@@ -13,10 +13,12 @@ namespace Domenico1 {
         public GameObject characterModel;
         public float velocityRotation;
         public SpriteRenderer model;
-
+        private ColorManagment colorManagment;
 
         private void Start() {
 
+            colorManagment = FindObjectOfType<ColorManagment>();
+            
             foreach (var item in FindObjectsOfType(typeof(ButtonData))) {
                 item.GetComponent<ButtonData>().onColorChange += ChangeColor;
             }
@@ -35,8 +37,11 @@ namespace Domenico1 {
             var obstacle = other.gameObject.GetComponent<ObstacleController>();
 
             if (obstacle) {
-                if (obstacle.currentColor != model.color) {
+                if (colorManagment.primaryColor != model.color) {
                     OnPlayerDeath?.Invoke();
+                }
+                else {
+                    obstacle.StartAnim();
                 }
 
 

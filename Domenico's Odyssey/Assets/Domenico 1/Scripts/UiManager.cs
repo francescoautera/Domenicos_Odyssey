@@ -7,9 +7,9 @@ namespace Domenico1 {
 	
 	public class UiManager : MonoBehaviour {
 
-		public TMP_Text loseText;
+		public TextMeshProUGUI  loseText;
 		public Button restartButton;
-
+		[SerializeField] ColorDB colorDB;
 
 		private void Awake() {
 			loseText.enabled = false;
@@ -19,6 +19,8 @@ namespace Domenico1 {
 
 		public void ActiveLose() {
 			loseText.enabled = true;
+			var st ="#"+ ColorUtility.ToHtmlStringRGBA(colorDB.colors[0].color);
+			loseText.text = "cambia colore in" + $"<color={st}> blu </color>" ;
 			restartButton.gameObject.SetActive(true);
 		}
 

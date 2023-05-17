@@ -26,15 +26,45 @@ namespace Domenico1 {
         // Update is called once per frame
         void Update() {
 
-            if (slider.value != 0.5f && isFirstTime) {
+            float sliderValue = slider.value;
+            
+            CheckForMovement(sliderValue);
+
+            UpdateMovement(sliderValue);
+        }
+
+        void CheckForMovement(float value)
+        {
+            if (value != 0.5f && isFirstTime) {
                 handTutorial.SetActive(false);
                 isFirstTime = false;
             }
-            
-            float xPos = Mathf.Clamp(slider.value,minMaxViewportRange.x,minMaxViewportRange.y);
-            Vector3 pos = cameraMain.ViewportToWorldPoint(new Vector3(xPos, characterController.transform.position.y,characterController.transform.position.z));
+        }
+
+        void UpdateMovement(float value)
+        {
+            Vector3 charPos = characterController.transform.position;
+            float xPos = Mathf.Clamp(value, minMaxViewportRange.x, minMaxViewportRange.y);
+            Vector3 pos = cameraMain.ViewportToWorldPoint(new Vector3(xPos, charPos.y, charPos.z));
 
             characterController.SetPos(pos.x);
+
+            if (value == 1)
+            {
+                float lerpDuration = 2.0f;
+                float t = 0.0f;
+                
+                Vector3 endPos = cameraMain.ViewportToWorldPoint(new Vector3 (minMaxViewportRange.x, charPos.y, charPos.z));
+
+                while (t < 1.0f)
+                {
+                    t+= Time.deltaTime / lerpDuration;
+                    Vector3 lerpedPos = Vector3.Lerp(charPos, endPos, t);
+                    characterController.SetPos(lerpedPos.x);
+                }
+                
+                characterController.SetPos(endPos.x);
+            }
         }
     }
 

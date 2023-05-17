@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: obstacleDbSprites
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 7bcc2a5259a5283408f4ed791aa6c0c3, type: 3}
-  - {fileID: 21300000, guid: b29b238e0d855334c9b096b728005396, type: 3}
+  - {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}

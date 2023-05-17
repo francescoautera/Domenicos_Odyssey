@@ -22,12 +22,19 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   colors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 0.22606516, b: 1, a: 1}
-  - {r: 0.2502427, g: 1, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0.8697839, a: 1}
-  - {r: 0, g: 0.9489832, b: 1, a: 1}
-  - {r: 0.6919296, g: 0.19744569, b: 0.8207547, a: 1}
-  - {r: 0.990566, g: 0.79533386, b: 0.07008721, a: 1}
-  - {r: 0.12936097, g: 0.4811321, b: 0.43102252, a: 1}
-  - {r: 0.9622642, g: 0.2951957, b: 0.013616921, a: 1}
+  - color: {r: 1, g: 0, b: 0, a: 1}
+    nameColor: rosso
+  - color: {r: 0.065103225, g: 0.7264151, b: 0.17656735, a: 1}
+    nameColor: verde
+  - color: {r: 1, g: 0.89691, b: 0.1462264, a: 1}
+    nameColor: giallo
+  - color: {r: 0.08018869, g: 0.9128887, b: 1, a: 1}
+    nameColor: azzurro
+  - color: {r: 0.70803916, g: 0.12335351, b: 0.7924528, a: 1}
+    nameColor: viola
+  - color: {r: 0.07806135, g: 0.07355818, b: 0.8207547, a: 1}
+    nameColor: blu
+  - color: {r: 1, g: 0.47107324, b: 0.0990566, a: 1}
+    nameColor: arancione
+  - color: {r: 1, g: 0.504717, b: 0.86255866, a: 1}
+    nameColor: rosa
