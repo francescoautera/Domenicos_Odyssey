@@ -19,8 +19,7 @@ namespace Domenico1 {
 
 		public void ActiveLose() {
 			loseText.enabled = true;
-			var st ="#"+ ColorUtility.ToHtmlStringRGBA(colorDB.colors[0].color);
-			loseText.text = "cambia colore in" + $"<color={st}> blu </color>" ;
+			loseText.text = "Hai perso!" ;
 			restartButton.gameObject.SetActive(true);
 		}
 
