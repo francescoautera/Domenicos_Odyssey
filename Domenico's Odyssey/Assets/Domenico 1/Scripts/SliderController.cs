@@ -11,6 +11,7 @@ namespace Domenico1 {
         [SerializeField] private Slider slider;
         [SerializeField] private Vector2 minMaxViewportRange;
         [SerializeField] private GameObject handTutorial;
+        [SerializeField] private float lerpDuration;
         private Camera cameraMain;
         bool isFirstTime;
         
@@ -51,19 +52,26 @@ namespace Domenico1 {
 
             if (value == 1)
             {
-                float lerpDuration = 2.0f;
                 float t = 0.0f;
                 
                 Vector3 endPos = cameraMain.ViewportToWorldPoint(new Vector3 (minMaxViewportRange.x, charPos.y, charPos.z));
 
-                while (t < 1.0f)
-                {
-                    t+= Time.deltaTime / lerpDuration;
-                    Vector3 lerpedPos = Vector3.Lerp(charPos, endPos, t);
-                    characterController.SetPos(lerpedPos.x);
-                }
+                StartCoroutine(SlideBack(lerpDuration, charPos, endPos));
                 
                 characterController.SetPos(endPos.x);
+            }
+        }
+
+        private IEnumerator SlideBack(float lerpDuration, Vector3 charPos, Vector3 endPos)
+        {
+            float t = 0.0f;
+            
+            while (t < 1.0f)
+            {
+                t+= Time.deltaTime / lerpDuration;
+                Vector3 lerpedPos = Vector3.Lerp(charPos, endPos, t);
+                characterController.SetPos(lerpedPos.x);
+                yield return null;
             }
         }
     }
