@@ -47,6 +47,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstFloor: {fileID: 8672100852590074606}
   velocity: 5
+  numberOfWin: 0
+  mapVelocityWins:
+  - numberWin: 0
+    velocity: 1.5
+  - numberWin: 5
+    velocity: 2
+  - numberWin: 10
+    velocity: 2.5
+  - numberWin: 15
+    velocity: 3.5
+  - numberWin: 100
+    velocity: 5
 --- !u!1001 &6198874506362936030
 PrefabInstance:
   m_ObjectHideFlags: 0

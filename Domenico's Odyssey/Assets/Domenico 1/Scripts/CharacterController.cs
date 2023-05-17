@@ -10,6 +10,7 @@ namespace Domenico1 {
 
     public class CharacterController : MonoBehaviour {
         public Action OnPlayerDeath;
+        public Action OnPlayerWin;
         public GameObject characterModel;
         public float velocityRotation;
         public SpriteRenderer model;
@@ -41,6 +42,7 @@ namespace Domenico1 {
                     OnPlayerDeath?.Invoke();
                 }
                 else {
+                    OnPlayerWin?.Invoke();
                     obstacle.StartAnim();
                 }
 
