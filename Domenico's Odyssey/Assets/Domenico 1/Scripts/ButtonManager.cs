@@ -25,10 +25,13 @@ public class ButtonManager : MonoBehaviour {
 	public float yTime;
 	public float xTime;
 	private CharacterController characterController;
+	private SoundsManager _soundsManager;
 
 	public List<ButtonData> CurrentButtonsInUi => currentButtonsInUi;
 
-	private void Start() {
+	private void Start()
+	{
+		_soundsManager = FindObjectOfType<SoundsManager>();
 		characterController = FindObjectOfType<CharacterController>();
 
 		//buttons = FindObjectsOfType<ButtonData>().ToList();
@@ -62,6 +65,7 @@ public class ButtonManager : MonoBehaviour {
 	}
 
 	private void TrySwap() {
+		_soundsManager.SwitchButtonSound();
 		somethingIsSwapping = true;
 		var tmpButtons = new List<ButtonData>();
 		tmpButtons.AddRange(buttons);
@@ -73,7 +77,9 @@ public class ButtonManager : MonoBehaviour {
 	}
 
 	[Button("ChangeAllColor")]
-	public void ChangeAllColor() {
+	public void ChangeAllColor()
+	{
+		_soundsManager.SwitchColorSound();
 		Debug.Log("enter");
 		feedbackChangeColor.SetActive(true);
 		indexColors.Clear();

@@ -11,9 +11,11 @@ public class MenuManager : MonoBehaviour {
    public Button buttonStartGame;
    public float waitChangeScene;
    public float fadeTimer;
+   private SoundsManager _soundsManager;
    
-   private void Awake() {
-      
+   private void Awake()
+   {
+      _soundsManager = FindObjectOfType<SoundsManager>();
       fade.CrossFadeAlpha(0,fadeTimer,false);
       buttonStartGame.onClick.AddListener(StartGame);
    }
@@ -26,6 +28,7 @@ public class MenuManager : MonoBehaviour {
    }
 
    IEnumerator WaitBeforeChangeScene() {
+      _soundsManager.ButtonPressedSound();
       yield return new WaitForSeconds(waitChangeScene);
       SceneManager.LoadScene("_Main");
    }

@@ -25,9 +25,6 @@ namespace Domenico1 {
 		void ActiveDeath() {
 			uiManager.ActiveLose();
 		}
-
-
-      
 	}
 
 }

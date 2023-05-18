@@ -17,9 +17,12 @@ namespace Domenico1 {
 		[SerializeField] private TMP_Text point;
 		private CharacterController characterController;
 		[SerializeField] private Image fade;
+		private SoundsManager _soundsManager;
 		
 		
-		private void Awake() {
+		private void Awake()
+		{
+			_soundsManager = FindObjectOfType<SoundsManager>();
 			fade.CrossFadeAlpha(0,1,false);
 			loseText.enabled = false;
 			restartButton.onClick.AddListener(Restart);
@@ -37,6 +40,7 @@ namespace Domenico1 {
 		public void ActiveLose() {
 
 			StartCoroutine(Wait());
+			_soundsManager.LoseGameSound();
 		}
 
 		IEnumerator Wait() {
@@ -57,11 +61,13 @@ namespace Domenico1 {
 		}
 
 		private void BackToMenu() {
-			fade.CrossFadeAlpha(1,1,false);
+			_soundsManager.QuitButtonSound();
+			fade.CrossFadeAlpha(1,2,false);
 			StartCoroutine(WaitBeforeChangeScene("_Menu"));
 		}
 
 		IEnumerator WaitBeforeChangeScene(string nameScene) {
+			_soundsManager.ButtonPressedSound();
 			yield return new WaitForSeconds(1.1f);
 			SceneManager.LoadScene(nameScene);
 		}

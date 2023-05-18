@@ -14,8 +14,12 @@ namespace Domenico1 {
 		private CharacterController characterController;
 		private bool stop;
 		private int currentIndex;
-		
-		private void Awake() {
+		private SoundsManager _soundsManager;
+		[SerializeField] private List<ParticleSystem> speedUpEffects;
+
+		private void Awake()
+		{
+			_soundsManager = FindObjectOfType<SoundsManager>();
 			firstFloor.ParentTransform = transform;
 			firstFloor.StartFirstFloor();
 			characterController = FindObjectOfType<CharacterController>();
@@ -31,10 +35,13 @@ namespace Domenico1 {
 			if (!stop) {
 				transform.position += (Vector3.up * velocity * Time.deltaTime);
 			}
+			
 		}
 
 
-		public void UpdateVelocity() {
+		private void UpdateVelocity()
+		{
+			
 			numberOfWin++;
 			int finalX = 0;
 			foreach (var mapVelocity in mapVelocityWins) {
@@ -43,13 +50,21 @@ namespace Domenico1 {
 					if (currentIndex < finalX) {
 						currentIndex = finalX;
 						feedbackSpeedUp.SetActive(true);
+						_soundsManager.SpeedUpSound();
+
+						foreach (var speedUpEffect in speedUpEffects)
+						{
+							speedUpEffect.Play();
+						}
 					}
 					break;
 				}
+				
 			}
-
+			
+			
 			velocity = mapVelocityWins[finalX].velocity;
-
+			
 		}
 	}
 

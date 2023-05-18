@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1017ae81-c723-456e-9207-4df4ef276fb1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Domenico's Odyssey/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Domenico's Odyssey/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Domenico 1/Scenes/_Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Domenico 1/Scenes/_Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Domenico 1/Scenes/_Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Domenico 1/Scenes/_Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Domenico 1/Scripts/ButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Domenico 1/Scripts/ButtonManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Domenico 1/Scripts/FloorGenerator/FloorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Domenico 1/Scripts/FloorGenerator/FloorManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Domenico 1/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Domenico 1/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Domenico 1/Scripts/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Domenico 1/Scripts/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Domenico 1/Scripts/SoundsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Domenico 1/Scripts/SoundsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Domenico 1/Scripts/UiManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Domenico 1/Scripts/UiManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Domenico 1/parallasse/Materials/Skybiox.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Domenico 1/parallasse/Materials/Skybiox.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +20,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Domenico 1/Scripts/CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
