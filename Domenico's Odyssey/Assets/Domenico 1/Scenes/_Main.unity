@@ -4837,7 +4837,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 324579a6844e74d43a80d66cc8fb68df, type: 3}
     - target: {fileID: 5089179121350912319, guid: 8c4a5f7aab6868e4f8c24dd6ae0c9e9c,
         type: 3}
       propertyPath: loseGame
@@ -4847,7 +4847,7 @@ PrefabInstance:
         type: 3}
       propertyPath: loseSong
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 324579a6844e74d43a80d66cc8fb68df, type: 3}
     - target: {fileID: 5089179121350912319, guid: 8c4a5f7aab6868e4f8c24dd6ae0c9e9c,
         type: 3}
       propertyPath: speedUpClip
@@ -4867,7 +4867,7 @@ PrefabInstance:
         type: 3}
       propertyPath: backgroundSong
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 51c7b3d14e116274798011bdb1b7678a, type: 3}
     - target: {fileID: 5089179121350912319, guid: 8c4a5f7aab6868e4f8c24dd6ae0c9e9c,
         type: 3}
       propertyPath: quitButtonClip
