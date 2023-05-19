@@ -23,9 +23,9 @@ namespace Domenico1 {
 
 		private void TrySetColor() => colorManagment.SetColor();
 
-		public void SetColorAndSprite(Color color,Sprite s) {
+		public void SetColorAndSprite(Color color,Sprite s =null) {
 			GetComponentInChildren<SpriteRenderer>().color = color;
-			GetComponentInChildren<SpriteRenderer>().sprite = s;
+			//GetComponentInChildren<SpriteRenderer>().sprite = s;
 			currentColor = color;
 			
 		}

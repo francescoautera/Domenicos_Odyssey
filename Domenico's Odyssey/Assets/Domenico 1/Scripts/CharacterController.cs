@@ -11,6 +11,7 @@ namespace Domenico1 {
     public class CharacterController : MonoBehaviour {
         public Action OnPlayerDeath;
         public Action OnPlayerWin;
+        public Action OnPlaySfxRequested;
         public GameObject characterModel;
         public float velocityRotation;
         public SpriteRenderer model;
@@ -31,6 +32,7 @@ namespace Domenico1 {
 
         private void ChangeColor(Color col) {
             model.color = col;
+            OnPlaySfxRequested?.Invoke();
         }
 
         private void OnTriggerEnter2D(Collider2D other) {

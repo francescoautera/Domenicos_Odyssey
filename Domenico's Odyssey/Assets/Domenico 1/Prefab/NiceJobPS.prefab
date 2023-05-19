@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4978252377453209245}
   - component: {fileID: 4978252377453209242}
   - component: {fileID: 4978252377453209243}
+  - component: {fileID: 4381055400209199714}
   m_Layer: 0
   m_Name: NiceJobPS
   m_TagString: Untagged
@@ -4812,3 +4813,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &4381055400209199714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4978252377453209240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee65d7678c36bb440a4084dfdd026d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 4978252377453209242}

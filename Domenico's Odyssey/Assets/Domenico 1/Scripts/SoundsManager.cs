@@ -8,6 +8,7 @@ using CharacterController = Domenico1.CharacterController;
 public class SoundsManager : MonoBehaviour {
 
     public AudioSource audioSource;
+    public AudioSource sfxAudioSource;
     public AudioClip backgroundSong;
     public AudioClip loseSong;
     public AudioClip buttonPressedClip;
@@ -18,41 +19,49 @@ public class SoundsManager : MonoBehaviour {
     public AudioClip speedUpClip;
     private CharacterController characterController;
     public float timerModifyVolume;
+    
 
     private void Awake() {
 
         characterController = FindObjectOfType<CharacterController>();
         characterController.OnPlayerDeath += ChangeSong;
+        characterController.OnPlaySfxRequested += ButtonPressedSound;
     }
-
-    public void ButtonPressedSound()
-    {
-        audioSource.PlayOneShot(buttonPressedClip);
+    
+    
+    public void ButtonPressedSound() {
+        sfxAudioSource.clip = buttonPressedClip;
+        sfxAudioSource.PlayOneShot(buttonPressedClip);
     }
 
     public void SwitchColorSound()
     {
-        audioSource.PlayOneShot(switchColorsClip);
+        sfxAudioSource.clip = switchColorsClip;
+        sfxAudioSource.PlayOneShot(switchColorsClip);
     }
     
     public void SwitchButtonSound()
     {
-        audioSource.PlayOneShot(switchButtonsClip);
+        sfxAudioSource.clip = switchButtonsClip;
+        sfxAudioSource.PlayOneShot(switchButtonsClip);
     }
     
     public void QuitButtonSound()
     {
-        audioSource.PlayOneShot(quitButtonClip);
+        sfxAudioSource.clip = quitButtonClip;
+        sfxAudioSource.PlayOneShot(quitButtonClip);
     }
 
     public void LoseGameSound()
     {
-        audioSource.PlayOneShot(loseGameClip);
+        sfxAudioSource.clip = loseGameClip;
+        sfxAudioSource.PlayOneShot(loseGameClip);
     }
 
     public void SpeedUpSound()
     {
-        audioSource.PlayOneShot(speedUpClip);
+        sfxAudioSource.clip = speedUpClip;
+        sfxAudioSource.PlayOneShot(speedUpClip);
     }
 
 

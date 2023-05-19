@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce93f89c665e494eac9842849409b956, type: 3}
-  m_Name: obstacleDbSprites
+  m_Script: {fileID: 188390376, guid: a4865f1ab4504ed8a368670db22f409c, type: 3}
+  m_Name: ImportSettingsConfig
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: 67c8f7c6e1976489ea4c4ae2b3bb6925, type: 3}
+  automateBeforeBuild: 1

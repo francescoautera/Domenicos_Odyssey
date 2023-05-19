@@ -44,8 +44,8 @@ namespace Domenico1 {
             Vector3 posToInstance = new Vector3(xOffset.x,characterController.transform.position.y-yOffset);
             var lastObj = Instantiate(obstacle, posToInstance, Quaternion.identity,floorManager.transform);
             //var color = colorDB.colors[Random.Range(0, colorDB.colors.Count)];
-            var sprite = obstacleDbSprites.GetSprite();
-            lastObj.GetComponent<ObstacleController>().SetColorAndSprite(Color.white, sprite);
+            //var sprite = obstacleDbSprites.GetSprite();
+            lastObj.GetComponent<ObstacleController>().SetColorAndSprite(Color.white);
             
             
         }
