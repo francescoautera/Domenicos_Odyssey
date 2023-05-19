@@ -1378,6 +1378,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af675dfd4d1642d19bef5da85dffb22b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerUpdateMeters: 0.3
+  currTimer: 0
 --- !u!1001 &718033357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1852,12 +1854,12 @@ PrefabInstance:
     - target: {fileID: 9212813034812511562, guid: f84a3a8691e359c49974cff2258e9efc,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1088.4779
+      value: 227
       objectReference: {fileID: 0}
     - target: {fileID: 9212813034812511562, guid: f84a3a8691e359c49974cff2258e9efc,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 223.68005
+      value: 191
       objectReference: {fileID: 0}
     - target: {fileID: 9212813034812511562, guid: f84a3a8691e359c49974cff2258e9efc,
         type: 3}
@@ -5060,7 +5062,7 @@ PrefabInstance:
         type: 3}
       propertyPath: quitButtonClip
       value: 
-      objectReference: {fileID: 8300000, guid: 198681fd702fa8d4d9e1702c59cb9da9, type: 3}
+      objectReference: {fileID: 8300000, guid: a92748b422bcffe4d847764d425d1e8b, type: 3}
     - target: {fileID: 5089179121350912319, guid: 8c4a5f7aab6868e4f8c24dd6ae0c9e9c,
         type: 3}
       propertyPath: sfxAudioSource

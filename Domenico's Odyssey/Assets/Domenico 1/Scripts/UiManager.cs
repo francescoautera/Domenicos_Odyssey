@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -34,7 +35,7 @@ namespace Domenico1 {
 
 		public void UpdateText(int value) {
 
-			point.text = value.ToString();
+			point.text = value +"m";
 		}
 
 		public void ActiveLose() {
